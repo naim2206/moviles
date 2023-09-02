@@ -24,13 +24,13 @@ class _MyAppState extends State<MyApp> {
           Image.network(
               "https://cruce.iteso.mx/wp-content/uploads/sites/123/2018/04/Portada-2-e1525031912445.jpg"),
           ListTile(
-            title: Text(
+            title: const Text(
               "El ITESO, Universidad Jesuita de Guadalajara",
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               "San Pedro Tlaquepaque, Jal",
-              style: const TextStyle(fontWeight: FontWeight.w200),
+              style: TextStyle(fontWeight: FontWeight.w200),
             ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
@@ -41,7 +41,8 @@ class _MyAppState extends State<MyApp> {
                       likes++;
                     });
                   },
-                  icon: Icon(Icons.thumb_up),
+                  icon: const Icon(Icons.thumb_up),
+                  color: Colors.indigo,
                 ),
                 Text(likes.toString())
               ],
@@ -61,16 +62,16 @@ class _MyAppState extends State<MyApp> {
                             ? colorCorreo = Colors.indigo
                             : colorCorreo = Colors.black;
                       });
-                      var snackBar = SnackBar(
+                      var snackBar = const SnackBar(
                         content:
                             Text("Puedes encontrar comida en sus cafeterías"),
-                        duration: const Duration(
+                        duration: Duration(
                             seconds: 3), // Duration the Snackbar is visible
                       );
                       ScaffoldMessenger.of(context).clearSnackBars();
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
-                    icon: Icon(Icons.mail),
+                    icon: const Icon(Icons.mail),
                   ),
                   const Text("Correo"),
                 ],
@@ -86,9 +87,9 @@ class _MyAppState extends State<MyApp> {
                             ? colorLlamada = Colors.indigo
                             : colorLlamada = Colors.black;
                       });
-                      var snackBar = SnackBar(
+                      var snackBar = const SnackBar(
                         content: Text("Puedes pedir información en rectoría"),
-                        duration: const Duration(
+                        duration: Duration(
                             seconds: 3), // Duration the Snackbar is visible
                       );
                       ScaffoldMessenger.of(context).clearSnackBars();
@@ -96,7 +97,7 @@ class _MyAppState extends State<MyApp> {
                     },
                     icon: const Icon(Icons.phone),
                   ),
-                  Text("Llamada"),
+                  const Text("Llamada"),
                 ],
               ),
               Column(
@@ -110,31 +111,29 @@ class _MyAppState extends State<MyApp> {
                             ? colorRuta = Colors.indigo
                             : colorRuta = Colors.black;
                       });
-                      var snackBar = SnackBar(
+                      var snackBar = const SnackBar(
                         content:
                             Text("Se encuentra ubicado en Periférico Sur 8585"),
-                        duration: const Duration(
+                        duration: Duration(
                             seconds: 3), // Duration the Snackbar is visible
                       );
                       ScaffoldMessenger.of(context).clearSnackBars();
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
-                    icon: Icon(Icons.directions),
+                    icon: const Icon(Icons.directions),
                   ),
-                  Text("Ruta"),
+                  const Text("Ruta"),
                 ],
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
+          const Padding(
+            padding: EdgeInsets.all(30.0),
             child: Text(
-              '''El ITESO, Universidad Jesuita de Guadalajara (Instituto Tecnológico y de Estudios Superiores de Occidente) es una universidad privada ubicada en la Zona Metropolitana de Guadalajara, Jalisco, México, fundada en el año 1957.
-                    
-                    La institución forma parte del Sistema Universitario Jesuita (SUJ) que integra a ocho universidades en México. La universidad es nombrada como la Universidad Jesuita de Guadalajara''',
+              '''El ITESO, Universidad Jesuita de Guadalajara (Instituto Tecnológico y de Estudios Superiores de Occidente) es una universidad privada ubicada en la Zona Metropolitana de Guadalajara, Jalisco, México, fundada en el año 1957. La institución forma parte del Sistema Universitario Jesuita (SUJ) que integra a ocho universidades en México. La universidad es nombrada como la Universidad Jesuita de Guadalajara''',
               textAlign: TextAlign.justify,
             ),
           ),
