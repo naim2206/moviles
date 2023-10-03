@@ -20,11 +20,62 @@ class _MultiplicaState extends State<Multiplica> {
             context.watch<CounterProvider>().counter.toString(),
             style: const TextStyle(fontSize: 40),
           ),
-          ElevatedButton(
-              onPressed: () {
-                context.read<CounterProvider>().multi2();
-              },
-              child: const Text('x2'))
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      context.read<CounterProvider>().multi2();
+                      ScaffoldMessenger.of(context).clearSnackBars();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Se multiplico x2',
+                          ),
+                          duration: Duration(seconds: 3),
+                        ),
+                      );
+                    },
+                    child: const Text('x2')),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      context.read<CounterProvider>().multi3();
+                      ScaffoldMessenger.of(context).clearSnackBars();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Se multiplico x3',
+                          ),
+                          duration: Duration(seconds: 3),
+                        ),
+                      );
+                    },
+                    child: const Text('x3')),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).clearSnackBars();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Se multiplico x5',
+                          ),
+                          duration: Duration(seconds: 3),
+                        ),
+                      );
+                      context.read<CounterProvider>().multi5();
+                    },
+                    child: const Text('x5')),
+              ),
+            ],
+          )
         ],
       ),
     );

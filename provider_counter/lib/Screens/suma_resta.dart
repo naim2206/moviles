@@ -14,16 +14,41 @@ class _SumaRestaState extends State<SumaResta> {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             context.watch<CounterProvider>().counter.toString(),
             style: const TextStyle(fontSize: 40),
           ),
-          ElevatedButton(
-              onPressed: () {
-                context.read<CounterProvider>().increment();
-              },
-              child: const Text('+'))
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      context.read<CounterProvider>().increment();
+                    },
+                    child: const Icon(Icons.add)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      context.read<CounterProvider>().decrement();
+                    },
+                    child: const Icon(Icons.exposure_minus_1)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      context.read<CounterProvider>().restart();
+                    },
+                    child: const Icon(Icons.restart_alt)),
+              ),
+            ],
+          )
         ],
       ),
     );
