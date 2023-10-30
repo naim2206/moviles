@@ -34,6 +34,7 @@ class _MainPageState extends State<MainPage> {
           children: [
             RadioListTile(
               value: 0,
+              activeColor: Theme.of(context).colorScheme.primary,
               groupValue: context.watch<TipTimeProvider>().selectedRadio,
               onChanged: (val) {
                 context.read<TipTimeProvider>().setSelectedRadio(val);
@@ -42,6 +43,7 @@ class _MainPageState extends State<MainPage> {
             ),
             RadioListTile(
               value: 1,
+              activeColor: Theme.of(context).colorScheme.primary,
               groupValue: context.watch<TipTimeProvider>().selectedRadio,
               onChanged: (val) {
                 context.read<TipTimeProvider>().setSelectedRadio(val);
@@ -50,6 +52,7 @@ class _MainPageState extends State<MainPage> {
             ),
             RadioListTile(
               value: 2,
+              activeColor: Theme.of(context).colorScheme.primary,
               groupValue: context.watch<TipTimeProvider>().selectedRadio,
               onChanged: (val) {
                 context.read<TipTimeProvider>().setSelectedRadio(val);
